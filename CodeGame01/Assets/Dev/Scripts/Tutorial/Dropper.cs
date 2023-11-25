@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Dropper : MonoBehaviour
 {
-    private MeshRenderer renderer;
+    private new MeshRenderer renderer;
     private Rigidbody gravity;
     [SerializeField] private float timeToWait = 3f;
 
@@ -24,7 +24,6 @@ public class Dropper : MonoBehaviour
         {
             renderer.enabled = true;
             gravity.useGravity = true;
-            Debug.Log("3 seconds has elapsed");
         }
     }
 }
