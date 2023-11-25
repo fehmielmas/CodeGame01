@@ -1,13 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Scorer : MonoBehaviour
 {
     public int hits = 0;
     public TMPro.TextMeshProUGUI Score;
-    
+
     void Start()
     {
         // Oyun başında kazanma metni devre dışı bırakılmış olarak başlar.
@@ -16,11 +14,14 @@ public class Scorer : MonoBehaviour
             Score.gameObject.SetActive(false);
         }
     }
+
+    // Scorer
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag != "Hit")
         {
             hits++;
+            Debug.Log("Scorer: " + hits);
         }
         if (other.gameObject.tag == "Player")
         {
@@ -28,8 +29,10 @@ public class Scorer : MonoBehaviour
             if (Score != null)
             {
                 Score.gameObject.SetActive(true);
-                Score.text = "Hit" + hits;
+                Score.text = "Hit: " + hits;
+                Debug.Log("Win Text Activated: " + hits);
             }
         }
     }
+
 }

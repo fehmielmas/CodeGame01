@@ -16,6 +16,7 @@ public class WinText : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        
         // Eğer çarpışan nesnenin etiketi "Player" ise (veya başka bir koşul ekleyebilirsiniz)
         if (other.gameObject.tag == "Player")
         {
