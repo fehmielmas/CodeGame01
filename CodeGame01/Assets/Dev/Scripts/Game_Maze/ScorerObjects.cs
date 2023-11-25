@@ -1,9 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;  // UI öğelerini kullanmak için gerekli kütüphane
+using TMPro;
 
 public class ScorerObjects : MonoBehaviour
 {
-    public TMPro.TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI ScoreText;
     public int hits = 0;
 
     void Start()
@@ -14,22 +14,32 @@ public class ScorerObjects : MonoBehaviour
             ScoreText.gameObject.SetActive(false);
         }
     }
+
+    void FixedUpdate()
+    {
+        // FixedUpdate içerisinde çarpışmayı sürekli kontrol et
+        CheckCollision();
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag != "Hit")
         {
             hits++;
             Debug.Log("ScorerObjects: " + hits);
-        }
-        // Eğer çarpışan nesnenin etiketi "Player" ise (veya başka bir koşul ekleyebilirsiniz)
-        if (other.gameObject.tag == "Hit")
-        {
+
             // Oyun kazanıldığında kazanma metnini aktif hale getir.
             if (ScoreText != null)
             {
                 ScoreText.gameObject.SetActive(true);
-                ScoreText.text = "You Hit!" + hits;
+                ScoreText.text = "You Hit! " + hits;
             }
         }
+    }
+
+    private void CheckCollision()
+    {
+        // Çarpışma kontrolü ile ilgili işlemleri buraya ekleyebilirsiniz.
+        // Örneğin, çarpışma sürekli kontrol edilsin ama her frame'de bir şey yapılmasın istiyorsanız, burada işlemler yapılabilir.
     }
 }
