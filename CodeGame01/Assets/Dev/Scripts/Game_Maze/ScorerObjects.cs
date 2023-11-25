@@ -6,12 +6,21 @@ public class ScorerObjects : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     public int hits = 0;
 
+    private CameraShake cameraShake; // CameraShake sınıfının referansı
+
     void Start()
     {
         // Oyun başında kazanma metni devre dışı bırakılmış olarak başlar.
         if (ScoreText != null)
         {
             ScoreText.gameObject.SetActive(false);
+        }
+
+        // CameraShake sınıfını ekranı sallamak için kullanın
+        cameraShake = Camera.main.GetComponent<CameraShake>();
+        if (cameraShake == null)
+        {
+            Debug.LogError("CameraShake scripti bulunamadı!");
         }
     }
 
@@ -33,6 +42,12 @@ public class ScorerObjects : MonoBehaviour
             {
                 ScoreText.gameObject.SetActive(true);
                 ScoreText.text = "You Hit! " + hits;
+
+                // Çarpışma sayısı 5 veya 5'ten büyükse ekranı salla
+                if (hits >= 5)
+                {
+                    ShakeScreen();
+                }
             }
         }
     }
@@ -41,5 +56,14 @@ public class ScorerObjects : MonoBehaviour
     {
         // Çarpışma kontrolü ile ilgili işlemleri buraya ekleyebilirsiniz.
         // Örneğin, çarpışma sürekli kontrol edilsin ama her frame'de bir şey yapılmasın istiyorsanız, burada işlemler yapılabilir.
+    }
+
+    private void ShakeScreen()
+    {
+        // Ekranı sallamak için CameraShake sınıfındaki metodları kullanın
+        if (cameraShake != null)
+        {
+            cameraShake.Shake();
+        }
     }
 }
