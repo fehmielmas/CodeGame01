@@ -1,18 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Dropper : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private MeshRenderer renderer;
+    private Rigidbody gravity;
+    [SerializeField] private float timeToWait = 3f;
+
+    private void Start()
     {
+        renderer = GetComponent<MeshRenderer>();
+        gravity = GetComponent<Rigidbody>();
         
+        renderer.enabled = false;
+        gravity.useGravity = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (Time.time > timeToWait)
+        {
+            renderer.enabled = true;
+            gravity.useGravity = true;
+            Debug.Log("3 seconds has elapsed");
+        }
     }
 }
