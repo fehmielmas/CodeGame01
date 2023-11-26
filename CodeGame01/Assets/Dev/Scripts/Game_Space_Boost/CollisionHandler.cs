@@ -9,27 +9,35 @@ public class CollisionHandler : MonoBehaviour
     
     [SerializeField] private AudioClip success;
     [SerializeField] private AudioClip crash;
-    [FormerlySerializedAs("levelLoadEffect")] public float levelLoadDelay = 0.5f;
+    public float levelLoadDelay = 0.5f;
 
     [SerializeField] private ParticleSystem successParicles;
     [SerializeField] private ParticleSystem crashParticles;
-    private new MeshCollider renderer;
      
     
     private AudioSource audioSource;
     private bool isTransitioning;
+    private bool collisionDisabled;
 
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        renderer = GetComponent<MeshCollider>();
-
-        renderer.enabled = true;
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.L))
+        {
+            StartSuccessSequence();
+        }
+        else if (Input.GetKey(KeyCode.C))
+        {
+            collisionDisabled = !collisionDisabled;
+        }
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (isTransitioning)
+        if (isTransitioning || collisionDisabled )
         {
             return;
         }
@@ -46,24 +54,6 @@ public class CollisionHandler : MonoBehaviour
                 StartCrashSequence();
                 break;
         }
-    }
-
-    void LoadNextLevelCheat()
-    {
-        if (Input.GetKey(KeyCode.L))
-        {
-            StartSuccessSequence();
-        }
-        else if (Input.GetKey(KeyCode.C))
-
-        {
-            renderer.enabled = false;
-        }
-    }
-
-    private void Update()
-    {
-        LoadNextLevelCheat();
     }
 
     void StartSuccessSequence()
