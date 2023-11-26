@@ -11,7 +11,7 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("this thing is friendly");
                 break;
             case "Finish":
-                Debug.Log("You Win");
+                NextLevel();
                 break;
             case "Fuel":
                 Debug.Log("More Fuell yeahhh");
@@ -20,6 +20,11 @@ public class CollisionHandler : MonoBehaviour
                 ReloadLevel();
                 break;
         }
+    }
+
+    void NextLevel()
+    {
+        
     }
 
     void ReloadLevel()
