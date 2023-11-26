@@ -10,8 +10,10 @@ public class SB_Movement : MonoBehaviour
     
     [SerializeField] private float rotateSpeed = 100f;
     [SerializeField] private float mainThrust = 200f;
-    [SerializeField] private AudioClip mainEngine; 
-
+    [SerializeField] private AudioClip mainEngine;
+   
+    [SerializeField] private ParticleSystem rocketFire;
+ 
     private AudioSource audioSource; 
     private Rigidbody rb;
     void Start()
@@ -32,6 +34,7 @@ public class SB_Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.freezeRotation = true;
+            rocketFire.Play();
             rb.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
             rb.freezeRotation = false;
             if (!audioSource.isPlaying)
