@@ -36,55 +36,81 @@ public class SB_Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.freezeRotation = true;
-            rb.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
-            rb.freezeRotation = false;
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(mainEngine);
-            }
-
-            if (!rocketFireMainFire.isPlaying)
-            {
-                rocketFireMainFire.Play();
-            } 
+            StartThrust();
         }
         else
         {
-            audioSource.Stop();
-            rocketFireMainFire.Stop();
+            StopThrust();
         }
         
     }
-
+    
     void ProcessRotation()
     {
         if (Input.GetKey((KeyCode.A)))
         {
-            ApplyRotation(rotateSpeed);
-            if (!rocketFireRightFire.isPlaying)
-            {
-                rocketFireRightFire.Play();
-            }
+            RotateLeft();
         }
         else if (Input.GetKey((KeyCode.D)))
         {
-            ApplyRotation(-rotateSpeed);
-            if (!rocketFireLeftFire.isPlaying)
-            {
-                rocketFireLeftFire.Play();
-            }
+            RotateRight();
         }
         else
         {
-            rocketFireRightFire.Stop();
-            rocketFireLeftFire.Stop();
+            RotateParticleStop();
         }
+    }
+    private void StartThrust()
+    {
+        rb.freezeRotation = true;
+        rb.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
+        rb.freezeRotation = false;
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(mainEngine);
+        }
+
+        if (!rocketFireMainFire.isPlaying)
+        {
+            rocketFireMainFire.Play();
+        }
+    }
+
+    private void StopThrust()
+    {
+        audioSource.Stop();
+        rocketFireMainFire.Stop();
     }
 
     public void ApplyRotation(float rotationThisFrame)
     {
         transform.Rotate(Vector3.forward * Time.deltaTime * rotationThisFrame);
     }
+
+    private void RotateParticleStop()
+    {
+        rocketFireRightFire.Stop();
+        rocketFireLeftFire.Stop();
+    }
+
+    private void RotateRight()
+    {
+        ApplyRotation(-rotateSpeed);
+        if (!rocketFireLeftFire.isPlaying)
+        {
+            rocketFireLeftFire.Play();
+        }
+    }
+
+    private void RotateLeft()
+    {
+        ApplyRotation(rotateSpeed);
+        if (!rocketFireRightFire.isPlaying)
+        {
+            rocketFireRightFire.Play();
+        }
+    }
+
+    
     
 }

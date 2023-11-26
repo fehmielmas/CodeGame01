@@ -13,6 +13,7 @@ public class CollisionHandler : MonoBehaviour
 
     [SerializeField] private ParticleSystem successParicles;
     [SerializeField] private ParticleSystem crashParticles;
+    private new MeshCollider renderer;
      
     
     private AudioSource audioSource;
@@ -21,6 +22,9 @@ public class CollisionHandler : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        renderer = GetComponent<MeshCollider>();
+
+        renderer.enabled = true;
     }
 
     void OnCollisionEnter(Collision other)
@@ -33,7 +37,7 @@ public class CollisionHandler : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "Friendly":
-                Debug.Log("this thing is friendly");
+                Debug.Log("Use Space and  A' D' ");
                 break;
             case "Finish":
                 StartSuccessSequence();
@@ -43,7 +47,25 @@ public class CollisionHandler : MonoBehaviour
                 break;
         }
     }
-    
+
+    void LoadNextLevelCheat()
+    {
+        if (Input.GetKey(KeyCode.L))
+        {
+            StartSuccessSequence();
+        }
+        else if (Input.GetKey(KeyCode.C))
+
+        {
+            renderer.enabled = false;
+        }
+    }
+
+    private void Update()
+    {
+        LoadNextLevelCheat();
+    }
+
     void StartSuccessSequence()
     {
         isTransitioning = true;
