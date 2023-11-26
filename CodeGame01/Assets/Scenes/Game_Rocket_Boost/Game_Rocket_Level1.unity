@@ -1257,30 +1257,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5229125952593841784}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &919132148484866548 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4922715356427243404, guid: ea5716f82d88aff4dab5807c67ed9de4,
-    type: 3}
-  m_PrefabInstance: {fileID: 5229125952593841784}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1007411154032206103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6525310910388596855, guid: 5bad21fa832582940893e49b507223ea,
     type: 3}
   m_PrefabInstance: {fileID: 6302089111275196768}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3469287838152545518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148484866548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261589c94cd44834896334a478e306ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3569757261047657808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1362,35 +1344,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 805927530}
     m_Modifications:
-    - target: {fileID: 3469287838152545516, guid: ea5716f82d88aff4dab5807c67ed9de4,
-        type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3469287838152545517, guid: ea5716f82d88aff4dab5807c67ed9de4,
-        type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3469287838152545517, guid: ea5716f82d88aff4dab5807c67ed9de4,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 541ea50057e518a4080f217455177cbf, type: 3}
-    - target: {fileID: 3469287838152545517, guid: ea5716f82d88aff4dab5807c67ed9de4,
-        type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4922715356427243404, guid: ea5716f82d88aff4dab5807c67ed9de4,
         type: 3}
       propertyPath: m_Name
       value: SpaceShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 4922715356427243404, guid: ea5716f82d88aff4dab5807c67ed9de4,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5700201586853451062, guid: ea5716f82d88aff4dab5807c67ed9de4,
         type: 3}
