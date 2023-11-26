@@ -1,6 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     void OnCollisionEnter(Collision other)
@@ -17,8 +17,16 @@ public class CollisionHandler : MonoBehaviour
                 Debug.Log("More Fuell yeahhh");
                 break;
             case "Enemy":
-                Debug.Log("Crashed Something");
+                ReloadLevel();
                 break;
         }
     }
+
+    void ReloadLevel()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
+    
+    
 }
