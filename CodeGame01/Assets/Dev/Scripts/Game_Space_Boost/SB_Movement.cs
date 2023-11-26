@@ -15,9 +15,8 @@ public class SB_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
-        audioSource.Stop();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,14 +28,17 @@ public class SB_Movement : MonoBehaviour
 
     void ProcessThrust()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             rb.freezeRotation = true;
             rb.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
             rb.freezeRotation = false;
-            audioSource.Play();
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
-        else if (Input.GetKeyUp(KeyCode.Space))
+        else
         {
             audioSource.Stop();
         }

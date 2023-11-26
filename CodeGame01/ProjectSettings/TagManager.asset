@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hit
+  - Friendly
+  - Enemy
+  - Fuel
   layers:
   - Default
   - TransparentFX
