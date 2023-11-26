@@ -1124,20 +1124,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 805927530}
     m_Modifications:
+    - target: {fileID: 3469287838152545516, guid: ea5716f82d88aff4dab5807c67ed9de4,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469287838152545517, guid: ea5716f82d88aff4dab5807c67ed9de4,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3469287838152545517, guid: ea5716f82d88aff4dab5807c67ed9de4,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 541ea50057e518a4080f217455177cbf, type: 3}
+    - target: {fileID: 3469287838152545517, guid: ea5716f82d88aff4dab5807c67ed9de4,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4922715356427243404, guid: ea5716f82d88aff4dab5807c67ed9de4,
         type: 3}
       propertyPath: m_Name
       value: SpaceShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 5229125952103609902, guid: ea5716f82d88aff4dab5807c67ed9de4,
-        type: 3}
-      propertyPath: m_Drag
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5229125952103609902, guid: ea5716f82d88aff4dab5807c67ed9de4,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 5700201586853451062, guid: ea5716f82d88aff4dab5807c67ed9de4,
         type: 3}

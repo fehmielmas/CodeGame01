@@ -7,6 +7,7 @@ using Debug = UnityEngine.Debug;
 
 public class SB_Movement : MonoBehaviour
 {
+    private AudioSource audioSource; 
     private Rigidbody rb; 
     [SerializeField] private float rotateSpeed = 100f;
     [SerializeField] private float mainThrust = 200f;
@@ -14,7 +15,9 @@ public class SB_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
+        audioSource.Stop();
     }
 
     // Update is called once per frame
@@ -26,11 +29,16 @@ public class SB_Movement : MonoBehaviour
 
     void ProcessThrust()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.freezeRotation = true;
             rb.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
             rb.freezeRotation = false;
+            audioSource.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            audioSource.Stop();
         }
         
     }
