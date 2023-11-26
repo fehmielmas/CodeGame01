@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Serialization;
 using Debug = UnityEngine.Debug;
 
 public class SB_Movement : MonoBehaviour
@@ -12,8 +13,10 @@ public class SB_Movement : MonoBehaviour
     [SerializeField] private float mainThrust = 200f;
     [SerializeField] private AudioClip mainEngine;
    
-    [SerializeField] private ParticleSystem rocketFire;
- 
+    [SerializeField] private ParticleSystem rocketFireMainFire;
+    [SerializeField] private ParticleSystem rocketFireLeftFire;
+    [SerializeField] private ParticleSystem rocketFireRightFire;
+    
     private AudioSource audioSource; 
     private Rigidbody rb;
     void Start()
@@ -34,17 +37,22 @@ public class SB_Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.freezeRotation = true;
-            rocketFire.Play();
             rb.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
             rb.freezeRotation = false;
             if (!audioSource.isPlaying)
             {
                 audioSource.PlayOneShot(mainEngine);
             }
+
+            if (!rocketFireMainFire.isPlaying)
+            {
+                rocketFireMainFire.Play();
+            } 
         }
         else
         {
             audioSource.Stop();
+            rocketFireMainFire.Stop();
         }
         
     }
@@ -54,10 +62,23 @@ public class SB_Movement : MonoBehaviour
         if (Input.GetKey((KeyCode.A)))
         {
             ApplyRotation(rotateSpeed);
+            if (!rocketFireRightFire.isPlaying)
+            {
+                rocketFireRightFire.Play();
+            }
         }
         else if (Input.GetKey((KeyCode.D)))
         {
             ApplyRotation(-rotateSpeed);
+            if (!rocketFireLeftFire.isPlaying)
+            {
+                rocketFireLeftFire.Play();
+            }
+        }
+        else
+        {
+            rocketFireRightFire.Stop();
+            rocketFireLeftFire.Stop();
         }
     }
 
