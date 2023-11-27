@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game_Rocket_Boost/Game_Rocket_Level2.unity
     guid: 045f90f976af416448bbf490181a8a28
+  - enabled: 1
+    path: Assets/Scenes/Game_Rocket_Boost/Game_Rocket_Level3.unity
+    guid: 754847bb67aa0ec4da983cf9e4d3e445
+  - enabled: 1
+    path: Assets/Scenes/Game_Rocket_Boost/Game_Rocket_Level4.unity
+    guid: e19f3facfbdd46540899658a5278ba44
+  - enabled: 1
+    path: Assets/Scenes/Game_Rocket_Boost/Game_Rocket_Level5.unity
+    guid: c986dd421a0924246b33cf796093a1cd
+  - enabled: 1
+    path: Assets/Scenes/Game_Rocket_Boost/Game_Rocket_Level6.unity
+    guid: 105e15677162b7e42807843c35f68c3a
   m_configObjects: {}

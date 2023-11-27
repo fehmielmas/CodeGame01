@@ -375,7 +375,7 @@ MonoBehaviour:
   success: {fileID: 8300000, guid: 75bd14ac1149b6a41ba35ee7384c0cc2, type: 3}
   crash: {fileID: 8300000, guid: 91df203595f72144fb19ff7d705791dc, type: 3}
   levelLoadDelay: 1
-  successParicles: {fileID: 2942962500754236054}
+  successParticles: {fileID: 2942962500754236054}
   crashParticles: {fileID: 2558512946593143462}
 --- !u!114 &8599324148294019118
 MonoBehaviour:
