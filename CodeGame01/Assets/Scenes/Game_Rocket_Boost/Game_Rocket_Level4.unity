@@ -869,6 +869,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &813857466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6292540044798567283, guid: a6484bc16b91c1e48903a4b094a5ddd8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1406911727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &882508533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,6 +1568,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1406911727}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1406911729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813857466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b836ae7c6d64b4e923c15424eebfdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objecyMovementPosition: {x: 0, y: 5, z: 0}
+  objectMovementFactor: 0
+  period: 2
 --- !u!1001 &1518029942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2339,7 +2360,7 @@ MonoBehaviour:
   success: {fileID: 0}
   crash: {fileID: 0}
   levelLoadDelay: 0.5
-  successParicles: {fileID: 0}
+  successParticles: {fileID: 0}
   crashParticles: {fileID: 0}
 --- !u!1001 &3569757261047657808
 PrefabInstance:
