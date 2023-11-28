@@ -2087,6 +2087,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player SpaceShip
       objectReference: {fileID: 0}
+    - target: {fileID: 8116770913178756422, guid: da5f0f51f94a9c3409dc5624cb1dccf9,
+        type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da5f0f51f94a9c3409dc5624cb1dccf9, type: 3}
 --- !u!4 &7929357168118169759 stripped
