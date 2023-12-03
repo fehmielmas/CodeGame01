@@ -13,6 +13,7 @@ public class NW_PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float horizontalThrow = Input.GetAxis("Horizontal");
+        Debug.Log(horizontalThrow);
     }
 }
