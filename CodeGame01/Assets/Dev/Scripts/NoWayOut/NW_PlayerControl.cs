@@ -14,6 +14,7 @@ public class NW_PlayerControl : MonoBehaviour
     void Update()
     {
         float horizontalThrow = Input.GetAxis("Horizontal");
+        float verticalThrow = Input.GetAxis("Vertical");
         Debug.Log(horizontalThrow);
     }
 }
