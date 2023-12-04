@@ -5,7 +5,7 @@ using UnityEngine.Serialization;
 
 public class NW_PlayerControl : MonoBehaviour
 {
-    [SerializeField] private float controlSpeed = 5f;
+    [SerializeField] private float controlSpeed = 200f;
     // Update is called once per frame
     void Update()
     {
@@ -13,8 +13,11 @@ public class NW_PlayerControl : MonoBehaviour
         float yAxisThrow = Input.GetAxis("Vertical");
 
         float xOffset = xAxisThrow * Time.deltaTime * controlSpeed;
+        float yOffset = yAxisThrow * Time.deltaTime * controlSpeed;
+        
         float newXPos = transform.localPosition.x + xOffset;
-        transform.localPosition = new Vector3(newXPos, transform.localPosition.y, transform.localPosition.z);
+        float newYPos = transform.localPosition.y + yOffset;
+        transform.localPosition = new Vector3(newXPos, newYPos, transform.localPosition.z);
     }
 
 }
