@@ -2020,7 +2020,7 @@ PrefabInstance:
     - target: {fileID: 6985009323485290025, guid: da5f0f51f94a9c3409dc5624cb1dccf9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 6.6
       objectReference: {fileID: 0}
     - target: {fileID: 6985009323485290025, guid: da5f0f51f94a9c3409dc5624cb1dccf9,
         type: 3}
@@ -2066,6 +2066,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player SpaceShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 7929357168118169760, guid: da5f0f51f94a9c3409dc5624cb1dccf9,
+        type: 3}
+      propertyPath: yRange
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da5f0f51f94a9c3409dc5624cb1dccf9, type: 3}
